@@ -35,42 +35,42 @@ knowledge across various domains.
 
 ## FUNCTIONAL REQUIREMENTS
 
-1. User Registration and Authentication:
+### 1. User Registration and Authentication:
 - Allow users to create an account and log in securely.
 - Provide authentication mechanisms to protect user data.
 
-2. User Profile:
+### 2. User Profile:
 - Enable users to create and manage their profiles.
 - Allow users to set their preferred language, subject areas, and study goals.
 
-3. Spaced Repetition Algorithm:
+### 3. Spaced Repetition Algorithm:
 - Implement a spaced repetition algorithm to schedule flashcards for review
 based on the user&#39;s performance.
 - Calculate optimal review intervals based on the forgetting curve and the
 user&#39;s historical data.
 
-4. Active Recall Exercises:
+### 4. Active Recall Exercises:
 - Incorporate active recall techniques by presenting users with prompts or
 questions related to the flashcards.
 - Allow users to attempt answering the prompts before revealing the answer.
 
-5. Progress Tracking:
+### 5. Progress Tracking:
 - Keep track of the user&#39;s progress and performance on flashcards.
 - Display statistics such as overall accuracy, time spent studying, and progress
 towards study goals.
 
-6. Flashcard Suggestion Engine:
+### 6. Flashcard Suggestion Engine:
 - Analyze the user&#39;s performance and understanding level for each flashcard.
 - Automatically suggest flashcards for review based on the user&#39;s proficiency
 level and spaced repetition principles.
 
-7. Adaptive Learning:
+### 7. Adaptive Learning:
 - Continuously adapt the difficulty of flashcards based on the user&#39;s
 performance and feedback.
 - Adjust the scheduling and presentation of flashcards to optimize learning
 efficiency.
 
-8. Notifications and Reminders:
+### 8. Notifications and Reminders:
 - Send reminders and notifications to users to encourage regular study
 sessions.
 - Allow users to customize notification settings based on their preferences.
