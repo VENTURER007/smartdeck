@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartdeckapp/pages/dashboard.dart';
-import 'package:smartdeckapp/pages/register.dart';
+import 'package:smartdeckapp/pages/dashboard_screen.dart';
+import 'package:smartdeckapp/pages/register_screen.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);

@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartdeckapp/pages/dashboard.dart';
+import 'package:smartdeckapp/pages/dashboard_screen.dart';
+import 'package:smartdeckapp/pages/register_screen.dart';
 
-class MyRegister extends StatefulWidget {
-  const MyRegister({Key? key}) : super(key: key);
+class WeeeksScreen extends StatefulWidget {
+  const WeeeksScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyRegister> createState() => _MyRegisterState();
+  State<WeeeksScreen> createState() => _MyLoginState();
 }
 
-class _MyRegisterState extends State<MyRegister> {
+class _MyLoginState extends State<WeeeksScreen> {
   bool _showPassword = false;
 
   @override
@@ -27,12 +28,12 @@ class _MyRegisterState extends State<MyRegister> {
                       height: 50,
                     ),
                     Icon(
-                      Icons.person_add,
+                      Icons.lock,
                       size: 80,
                       color: Colors.black,
                     ),
                     Text(
-                      'Register',
+                      'Smart Deck',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 45,
@@ -97,39 +98,13 @@ class _MyRegisterState extends State<MyRegister> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
-                    ),
-                    TextField(
-                      obscureText: !_showPassword,
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        hintText: 'Confirm Password',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _showPassword = !_showPassword;
-                            });
-                          },
-                          icon: Icon(
-                            _showPassword
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
                       height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          'Register',
+                          'Sign In',
                           style: TextStyle(
                             color: Color(0xff4c505b),
                             fontSize: 27,
@@ -154,13 +129,50 @@ class _MyRegisterState extends State<MyRegister> {
                             color: Colors.white,
                             icon: Icon(Icons.arrow_forward_ios),
                           ),
-                        ),
+                        )
                       ],
                     ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MyRegister(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 18,
+                              color: Color(0xff4c505b),
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Forgot Password',
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 18,
+                              color: Color(0xff4c505b),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
