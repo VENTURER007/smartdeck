@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smartdeckapp/pages/dashboard.dart';
+import 'package:smartdeckapp/pages/register.dart';
 
 
 class MyLogin extends StatefulWidget {
@@ -119,8 +120,13 @@ class _MyLoginState extends State<MyLogin> {
                       children: [
                         TextButton(
                             onPressed: (){
-                              Navigator.pushNamed(context, 'register');
-                            },
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder:(context)=>MyRegister(),
+                                )
+                         );
+                          },
                             child: Text(
                               'Sign Up',
                               style: TextStyle(

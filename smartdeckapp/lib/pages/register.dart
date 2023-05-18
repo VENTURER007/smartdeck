@@ -104,16 +104,19 @@ class _MyRegisterState extends State<MyRegister> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        child:Button(
-                              onPressed: (){
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context)=>MyLogin(),)
-                                )
-                              },
-                              )
+                        children:[
+                                TextButton(
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => MyLogin())
+                                  );
+                                },
+                                ),
+                              ]
 
-                        ],
+                  )
+                  ],
                       )
                     ],
                   ),
