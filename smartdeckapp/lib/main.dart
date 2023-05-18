@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smartdeckapp/pages/loginpage.dart';
+import 'package:smartdeckapp/pages/dashboard.dart';
 
 
 
@@ -14,7 +14,7 @@ class SmartDeck extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:LoginPage(),
+      home:Dashboard(),
     );
 
   }
