@@ -119,21 +119,24 @@ class _MyLoginState extends State<MyLogin> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
-                            onPressed: (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder:(context)=>MyRegister(),
-                                )
-                         );
-                          },
-                            child: Text(
-                              'Sign Up',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontSize: 18,
-                                color: Color(0xff4c505b),
-                        ),)),
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MyRegister(),
+      ),
+    );
+  },
+  child: Text(
+    'Sign Up',
+    style: TextStyle(
+      decoration: TextDecoration.underline,
+      fontSize: 18,
+      color: Color(0xff4c505b),
+    ),
+  ),
+),
+
                         TextButton(
                             onPressed: (){},
                             child: Text(
