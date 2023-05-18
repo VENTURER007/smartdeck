@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:smartdeckapp/pages/dashboard.dart';
 import 'package:smartdeckapp/pages/register.dart';
 
-
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
 
@@ -12,53 +11,54 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+  bool _showPassword = false;
+
   @override
   Widget build(BuildContext context) {
-    return
-     Container(
-      decoration: BoxDecoration(
-        backgroundBlendMode: BlendMode.darken,
-        color: Colors.grey[300],),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SafeArea(
-          child: Stack(
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+        child: Stack(
           children: [
             Container(
-              child: Center( 
-              child:Column (
-                children:[
-                  SizedBox(height: 50,),
-                    Icon(Icons.lock,
-                    size: 80,
-                    color: Colors.black,
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 50,
                     ),
-                Text(
-                'Smart Deck',
-                style: TextStyle(color: Colors.white, 
-                fontSize: 45,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.5,
-                shadows: [
-                  Shadow(
-                    color: Colors.black,
-                    blurRadius: 10,
-                    offset: Offset(5,5)
-                  )
-                ]),
+                    Icon(
+                      Icons.lock,
+                      size: 80,
+                      color: Colors.black,
+                    ),
+                    Text(
+                      'Smart Deck',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 45,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.5,
+                        shadows: [
+                          Shadow(
+                            color: Colors.black,
+                            blurRadius: 10,
+                            offset: Offset(5, 5),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-
-          ],
-          ),
-              ),
-        
             ),
             SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height* 0.32,
-                    right: 35,
-                    left: 35),
+                  top: MediaQuery.of(context).size.height * 0.32,
+                  right: 35,
+                  left: 35,
+                ),
                 child: Column(
                   children: [
                     TextField(
@@ -67,45 +67,65 @@ class _MyLoginState extends State<MyLogin> {
                         filled: true,
                         hintText: 'Email',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       height: 30,
                     ),
                     TextField(
-                      obscureText: true,
+                      obscureText: !_showPassword,
                       decoration: InputDecoration(
-                          fillColor: Colors.grey.shade100,
-                          filled: true,
-                          hintText: 'Password',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                        hintText: 'Password',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              _showPassword = !_showPassword;
+                            });
+                          },
+                          icon: Icon(
+                            _showPassword
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                          ),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       height: 40,
                     ),
-                    Row( mainAxisAlignment: MainAxisAlignment.end,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
                           'Sign In',
                           style: TextStyle(
-                              color: Color(0xff4c505b),
-                              fontSize: 27,
-                              fontWeight: FontWeight.w700),
+                            color: Color(0xff4c505b),
+                            fontSize: 27,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                        SizedBox(width:10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         CircleAvatar(
                           radius: 30,
                           backgroundColor: Color(0xff4c505b),
                           child: IconButton(
                             onPressed: () {
                               Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Dashboard(),
-                              ),
-                          );
-  },
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Dashboard(),
+                                ),
+                              );
+                            },
                             color: Colors.white,
                             icon: Icon(Icons.arrow_forward_ios),
                           ),
@@ -119,33 +139,34 @@ class _MyLoginState extends State<MyLogin> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => MyRegister(),
-      ),
-    );
-  },
-  child: Text(
-    'Sign Up',
-    style: TextStyle(
-      decoration: TextDecoration.underline,
-      fontSize: 18,
-      color: Color(0xff4c505b),
-    ),
-  ),
-),
-
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MyRegister(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 18,
+                              color: Color(0xff4c505b),
+                            ),
+                          ),
+                        ),
                         TextButton(
-                            onPressed: (){},
-                            child: Text(
-                              'Forgot Password',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontSize: 18,
-                                color: Color(0xff4c505b),
-                              ),))
+                          onPressed: () {},
+                          child: Text(
+                            'Forgot Password',
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 18,
+                              color: Color(0xff4c505b),
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],
@@ -153,8 +174,7 @@ class _MyLoginState extends State<MyLogin> {
               ),
             )
           ],
-        )
-      ),
+        ),
       ),
     );
   }
