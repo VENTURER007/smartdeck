@@ -13,6 +13,15 @@ class SmartDeck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Smart Deck',
+      theme: ThemeData(
+primaryColor: Colors.black,
+        scaffoldBackgroundColor: Colors.grey[300],
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Times New Roman',
+        useMaterial3: true,
+      ),
+
       debugShowCheckedModeBanner: false,
       home:MyLogin(),
     );
