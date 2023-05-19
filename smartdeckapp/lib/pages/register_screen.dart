@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smartdeckapp/pages/dashboard_screen.dart';
 import 'package:smartdeckapp/pages/login_screen.dart';
 
 class MyRegister extends StatefulWidget {
