@@ -39,8 +39,8 @@ class _DashboardState extends State<Dashboard> {
                 title: Text(
                   'Dashboard',
                   style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.black,
-                      ),
+                    color: Colors.black,
+                  ),
                 ),
               ),
               SliverList(
@@ -112,75 +112,103 @@ class _DashboardState extends State<Dashboard> {
                   ],
                 ),
               ),
-      SliverPadding(
-  padding: EdgeInsets.symmetric(vertical: 20),
-  sliver: SliverList(
-    delegate: SliverChildBuilderDelegate(
-      (BuildContext context, int index) {
-        List<String> imageNames = [
-          'book.png',
-          'increase-graph.png',
-        ];
+              SliverPadding(
+                padding: EdgeInsets.symmetric(vertical: 20),
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      List<String> imageNames = [
+                        'book.png',
+                        'increase-graph.png',
+                      ];
 
-        String imagePath = 'lib/images/${imageNames[index]}';
+                      String imagePath = 'lib/images/${imageNames[index]}';
 
-        return Padding(
-          padding: EdgeInsets.only(bottom: 20),
-          child: Material(
-            type: MaterialType.card,
-            borderRadius: borderRadius,
-            shadowColor: shadowcolor,
-            surfaceTintColor: surfacetint,
-            color: color,
-            elevation: 10,
-            child: FractionallySizedBox(
-              widthFactor: 0.9, // Adjust the value as needed
-              child: Container(
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    SizedBox(width: 20),
-                    Image.asset(
-                      imagePath,
-                      height: 150,
-                      width: 150,
-                      fit: BoxFit.cover,
-                    ),
-                    SizedBox(width: 20),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            index == 0 ? 'Topics and Flashcards' : 'Stats and Progress',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                      bool isAddButton = index == 0;
+                      IconData buttonIcon = isAddButton ? Icons.add : Icons.visibility;
+                      String buttonLabel = isAddButton ? 'Add' : 'View';
+
+                      return Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Material(
+                          type: MaterialType.card,
+                          borderRadius: borderRadius,
+                          shadowColor: shadowcolor,
+                          surfaceTintColor: surfacetint,
+                          color: color,
+                          elevation: 10,
+                          child: FractionallySizedBox(
+                            widthFactor: 0.9,
+                            child: Container(
+                              width: double.infinity,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: 20),
+                                  Image.asset(
+                                    imagePath,
+                                    height: 150,
+                                    width: 150,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          index == 0 ? 'Topics & Flashcard' : 'Stats & Progress',
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        SizedBox(height: 20),
+                                        Text(
+                                          index == 0
+                                              ? 'Click here to search new topics and create flashcards'
+                                              : 'Click here to view progress',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.grey[600],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  Column(
+                                    children: [
+                                      SizedBox(height: 10),
+                                      ElevatedButton.icon(
+                                        onPressed: () {
+                                          if (isAddButton) {
+                                            // Add button functionality here
+                                          } else {
+                                            // View button functionality here
+                                          }
+                                        },
+                                        icon: Icon(buttonIcon),
+                                        label: Text(buttonLabel),
+                                        style: ElevatedButton.styleFrom(
+                                          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                          textStyle: TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          SizedBox(height: 10),
-                          Text(
-                           index == 0 ? 'Click here to search new topics and create flashcars ' : 'Click here to view progress',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey[600],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                        ),
+                      );
+                    },
+                    childCount: 2,
+                  ),
                 ),
               ),
-            ),
-          ),
-        );
-      },
-      childCount: 2,
-    ),
-  ),
-),
-
             ],
           ),
           if (isLoading)
