@@ -9,12 +9,6 @@ class Dashboard extends StatelessWidget {
     Color shadowcolor = Theme.of(context).colorScheme.shadow;
     Color surfacetint = Colors.blue;
     const BorderRadius borderRadius = BorderRadius.all(Radius.circular(8.0));
-
-    final Color color = Theme.of(context).colorScheme.surface;
-    Color shadowcolor = Theme.of(context).colorScheme.shadow;
-    Color surfacetint = Colors.blue;
-    const BorderRadius borderRadius = BorderRadius.all(Radius.circular(8.0));
-
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: CustomScrollView(
