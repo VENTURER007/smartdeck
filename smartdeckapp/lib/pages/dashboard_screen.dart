@@ -5,79 +5,151 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color color = Theme.of(context).colorScheme.surface;
+    Color shadowcolor = Theme.of(context).colorScheme.shadow;
+    Color surfacetint = Colors.blue;
+    const BorderRadius borderRadius = BorderRadius.all(Radius.circular(8.0));
+
     return Scaffold(
       backgroundColor: Colors.grey[300],
-  body: SafeArea(child: Column(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Row(mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 30,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 30,
+                  ),
+                  Material(
+                    type: MaterialType.card,
+                    borderRadius: borderRadius,
+                    shadowColor: shadowcolor,
+                    surfaceTintColor: surfacetint,
+                    color: color,
+                    elevation: 10,
+                    child: Container(
+                      height: 120,
+                      width: 120,
+                      child: Center(
+                        child: Text(
+                          'Container 1',
+                          style: TextStyle(
+                            color: Colors.grey[800],
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 25),
+                  Material(
+                    type: MaterialType.card,
+                    borderRadius: borderRadius,
+                    shadowColor: shadowcolor,
+                    surfaceTintColor: surfacetint,
+                    color: color,
+                    elevation: 10,
+                    child: Container(
+                      height: 100,
+                      width: 200,
+                    ),
+                  ),
+                ],
+              ),
+              Material(
+                type: MaterialType.card,
+                borderRadius: borderRadius,
+                shadowColor: shadowcolor,
+                surfaceTintColor: surfacetint,
+                color: Colors.black,
+                elevation: 2,
+                child: Container(
+                  height: 5,
+                  width: 350,
+                ),
+              ),
+              SizedBox(height: 10,),
+              Material(
+                type: MaterialType.card,
+                borderRadius: borderRadius,
+                shadowColor: shadowcolor,
+                surfaceTintColor: surfacetint,
+                color: color,
+                elevation: 10,
+                child: Container(
+                  height: 175,
+                  width: 175,
+                ),
+              ),
+               SizedBox(height: 10,),
+              Material(
+                type: MaterialType.card,
+                borderRadius: borderRadius,
+                shadowColor: shadowcolor,
+                surfaceTintColor: surfacetint,
+                color: color,
+                elevation: 10,
+                child: Container(
+                  height: 175,
+                  width: 175,
+                ),
+              ),
+               SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Material(
+                    type: MaterialType.card,
+                    borderRadius: borderRadius,
+                    shadowColor: shadowcolor,
+                    surfaceTintColor: surfacetint,
+                    color: color,
+                    elevation: 10,
+                    child: Container(
+                      height: 175,
+                      width: 175,
+                    ),
+                  ),
+                ],
+              ),
+               SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Material(
+                    type: MaterialType.card,
+                    borderRadius: borderRadius,
+                    shadowColor: shadowcolor,
+                    surfaceTintColor: surfacetint,
+                    color: color,
+                    elevation: 10,
+                    child: Container(
+                      height: 75,
+                      width: 100,
+                    ),
+                  ),
+                   SizedBox(height: 10,),
+                  Material(
+                    type: MaterialType.card,
+                    borderRadius: borderRadius,
+                    shadowColor: shadowcolor,
+                    surfaceTintColor: surfacetint,
+                    color: color,
+                    elevation: 10,
+                    child: Container(
+                      height: 75,
+                      width: 100,
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
-
-Container(
-  color: const Color.fromARGB(255, 243, 107, 33),
-  height:100,
-  width:100,),
-  Container(
-  color: Color.fromARGB(255, 224, 71, 20),
-  height:120,
-  width:240,
-
-
-)
-        ],
+        ),
       ),
-Row(
-  mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            height:175,
-            width:175,
-            color: Colors.red,
-          ),
-          Container(
-            height:175,
-            width:175,
-            color: Colors.blue,
-          ),
-        ],
-      ),
-      
-
-    Row(
-  mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            height:175,
-            width:175,
-            color: Colors.green,
-          ),
-        ],
-      ),
-      Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround, 
-        children:[ 
-     Container(
-            height:75,
-            width:100,
-            color: Colors.green,
-          ),
-    
-     Container(
-            height:75,
-            width:100,
-            color: const Color.fromARGB(255, 30, 33, 30),
-          ),
-          ],
-          )
-          ],
-
-
-  ),
-  ),
     );
   }
 }
-
