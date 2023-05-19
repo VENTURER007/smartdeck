@@ -146,7 +146,7 @@ class _MyRegisterState extends State<MyRegister> {
                             ),
                           ),
                         ),
-                        SizedBox(width:70),
+                        SizedBox(width:40),
                         Text(
                           
                           'Register',
